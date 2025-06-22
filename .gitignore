@@ -1,0 +1,84 @@
+# Build directories
+bin/
+obj/
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ASP.NET Core
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# EF Core Migrations
+Migrations/
+
+# Publish output
+publish/
+dist/
+
+# NuGet
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild package source
+!**/packages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/packages/repositories.config
+
+# Microsoft Azure Web App publish settings
+*.Publish.xml
+
+# Local DBs
+*.mdf
+*.ldf
+
+# IIS Express
+/.vs/
+iisexpress/
+
+# DotCover
+*.dotCover
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# TeamCity
+_TeamCity*
+
+# NCrunch
+*.ncrunch*
+.*crunch*.local.xml
+
+# Sonar
+.sonar/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Certificates
+*.pfx
+*.cer
+
+# User-specific files
+*.userprefs
+
+# JetBrains Rider
+.idea/
