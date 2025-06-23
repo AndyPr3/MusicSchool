@@ -55,7 +55,7 @@ namespace MusicSchool.Infrastructure.Repositories
             p.Add("@Id", entity.Id);
             p.Add("@Code", entity.Code);
             p.Add("@Name", entity.Name);
-            p.Add("@Desc", entity.Description);
+            p.Add("@Description", entity.Description);
             return await conn.ExecuteAsync("sp_UpdateSchool", p, commandType: CommandType.StoredProcedure);
         }
     }

@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MusicSchool.Application\MusicSchool.Application.csproj" />
     <ProjectReference Include="..\MusicSchool.Domain\MusicSchool.Domain.csproj" />
   </ItemGroup>
 

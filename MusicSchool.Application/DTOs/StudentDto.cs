@@ -1,10 +1,10 @@
-﻿namespace MusicSchool.Domain.Entities
+﻿namespace MusicSchool.Application.DTOs
 {
-    public class Student
+    public class StudentDto
     {
         public int Id { get; set; }
         public string IdentificationNumber { get; set; }
-        public string FirstName { get; set; }
+        public string FirtsName { get; set; }
         public string LastName { get; set; }
         public DateTime Birthdate { get; set; }
     }

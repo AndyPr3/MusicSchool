@@ -1,8 +1,9 @@
-﻿namespace MusicSchool.Domain.Entities
+﻿using MediatR;
+
+namespace MusicSchool.Application.Commands.TeacherCommand
 {
-    public class Teacher
+    public class TeacherCreateComand : IRequest<int>
     {
-        public int Id { get; set; }
         public string IdentificationNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

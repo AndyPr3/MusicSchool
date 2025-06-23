@@ -1,29 +1,29 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using MusicSchool.Application.Commands.SchoolCommand;
+using MusicSchool.Application.Commands.TeacherCommand;
 using MusicSchool.Application.DTOs;
-using MusicSchool.Application.Queries.SchoolQueries;
+using MusicSchool.Application.Queries.TeacherQueries;
 
 namespace MusicSchool.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SchoolsController : ControllerBase
+    public class TeachersController : ControllerBase
     {
         private readonly IMediator _mediator;
-        public SchoolsController(IMediator mediator) => _mediator = mediator;
+        public TeachersController(IMediator mediator) => _mediator = mediator;
 
         [HttpGet("GetAll")]
         public async Task<ActionResult> GetAll()
         {
             try
             {
-                var data = await _mediator.Send(new GetAllSchoolQuery());
-                return Ok(ApiResponse<List<SchoolDto>>.Ok(data));
+                var data = await _mediator.Send(new GetAllTeacherQuery());
+                return Ok(ApiResponse<List<TeacherDto>>.Ok(data));
             }
             catch (Exception ex)
             {
-                return BadRequest(ApiResponse<List<SchoolDto>>.Fail(400, $"Error found: {ex.Message}"));
+                return BadRequest(ApiResponse<List<TeacherDto>>.Fail(400, $"Error found: {ex.Message}"));
             }
 
         }
@@ -33,17 +33,17 @@ namespace MusicSchool.Api.Controllers
         {
             try
             {
-                var data = await _mediator.Send(new GetByIdSchoolQuery(id));
-                return Ok(ApiResponse<SchoolDto>.Ok(data));
+                var data = await _mediator.Send(new GetByIdTeacherQuery(id));
+                return Ok(ApiResponse<TeacherDto>.Ok(data));
             }
             catch (Exception ex)
             {
-                return BadRequest(ApiResponse<SchoolDto>.Fail(400, $"Error found: {ex.Message}"));
+                return BadRequest(ApiResponse<TeacherDto>.Fail(400, $"Error found: {ex.Message}"));
             }
         }
 
         [HttpPost("Create")]
-        public async Task<ActionResult> Create([FromBody] SchoolCreateComand cmd)
+        public async Task<ActionResult> Create([FromBody] TeacherCreateComand cmd)
         {
             try
             {
@@ -52,12 +52,12 @@ namespace MusicSchool.Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ApiResponse<List<SchoolDto>>.Fail(400, $"Error found: {ex.Message}"));
+                return BadRequest(ApiResponse<List<TeacherDto>>.Fail(400, $"Error found: {ex.Message}"));
             }
         }
 
         [HttpPost("Update")]
-        public async Task<ActionResult> Update([FromBody] SchoolUpdateComand cmd)
+        public async Task<ActionResult> Update([FromBody] TeacherUpdateComand cmd)
         {
             try
             {
@@ -66,12 +66,12 @@ namespace MusicSchool.Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ApiResponse<List<SchoolDto>>.Fail(400, $"Error found: {ex.Message}"));
+                return BadRequest(ApiResponse<List<TeacherDto>>.Fail(400, $"Error found: {ex.Message}"));
             }
         }
 
         [HttpPost("Delete")]
-        public async Task<ActionResult> Delete([FromBody] SchoolDeleteCommand cmd)
+        public async Task<ActionResult> Delete([FromBody] TeacherDeleteCommand cmd)
         {
             try
             {
@@ -80,7 +80,7 @@ namespace MusicSchool.Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ApiResponse<List<SchoolDto>>.Fail(400, $"Error found: {ex.Message}"));
+                return BadRequest(ApiResponse<List<TeacherDto>>.Fail(400, $"Error found: {ex.Message}"));
             }
         }
     }
